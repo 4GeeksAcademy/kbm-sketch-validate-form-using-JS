@@ -7,5 +7,21 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  console.log("Hello Rigo from the console!");
+   const form = document.getElementById("myForm");
+   const alertField = document.getElementById("alert-form");
+
+
+  form.addEventListener("submit", (event) => {
+    if (!form.checkValidity()) {
+      event.preventDefault(); 
+      event.stopPropagation();
+      
+
+       form.classList.add("was-validated");
+       alertField.classList.remove("d-none");
+    }
+       else {
+      alertField.classList.add("d-none"); // Hid
+     }
+  });
 };
